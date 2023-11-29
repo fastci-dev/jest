@@ -34,6 +34,9 @@ jobs:
     needs: prepare-yarn-cache-ubuntu
 
     steps:
+      - name: Start Fastci Tracer
+        uses: fastci-dev/tracer-bin@main
+        
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
