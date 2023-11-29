@@ -200,11 +200,8 @@ jobs:
         run: yarn --immutable
       - name: build
         run: yarn build:js
-      - name: Get number of CPU cores
-        id: cpu-cores
-        uses: SimenB/github-actions-cpu-cores@v2
       - name: run tests with coverage
-        run: yarn jest-coverage --color --config jest.config.ci.mjs --max-workers ${{ steps.cpu-cores.outputs.count }} --shard=${{ matrix.shard }}
+        run: yarn jest-coverage --color --config jest.config.ci.mjs --shard=${{ matrix.shard }}
       - name: map coverage
         run: node ./scripts/mapCoverage.mjs
         if: always()
