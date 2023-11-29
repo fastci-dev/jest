@@ -19,14 +19,6 @@ jobs:
     uses: ./.github/workflows/prepare-cache.yml
     with:
       os: ubuntu-latest
-  prepare-yarn-cache-macos:
-    uses: ./.github/workflows/prepare-cache.yml
-    with:
-      os: macos-latest
-  prepare-yarn-cache-windows:
-    uses: ./.github/workflows/prepare-cache.yml
-    with:
-      os: windows-latest
 
   ts-compatibility:
     name: TypeScript Compatibility
